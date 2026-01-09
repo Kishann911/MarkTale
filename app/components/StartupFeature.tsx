@@ -48,7 +48,7 @@ export default function StartupFeature() {
                             Ready to take your startup to the next level with a wide range of growth recipes?
                         </h4>
                         <p className="text-gray-600 font-body leading-relaxed mb-8">
-                            Born from Kestone Global's marketing DNA, The Kestone GTM Acceleration Program unlocks the power of proven strategies for ambitious startups. Through our commitment to fostering growth and innovation, we aim to fuel the entrepreneurial spirit in India and contribute to the evolution of a vibrant startup ecosystem.
+                            Born from Kestone Global&apos;s marketing DNA, The Kestone GTM Acceleration Program unlocks the power of proven strategies for ambitious startups. Through our commitment to fostering growth and innovation, we aim to fuel the entrepreneurial spirit in India and contribute to the evolution of a vibrant startup ecosystem.
                         </p>
                         <button className="px-8 py-3 border-2 border-kestone-black text-kestone-black font-bold uppercase tracking-wider hover:bg-kestone-black hover:text-white transition-all">
                             More on Our IP

@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { cn } from '@/app/lib/utils';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
     const { scrollY } = useScroll();
-    const [hidden, setHidden] = useState(false);
     const [background, setBackground] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -44,8 +44,13 @@ export default function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="relative block w-40 h-12">
-                    {/* Using standard img tag for simplicity within this context, next/image would require width/height knowledge or fill */}
-                    <img src="/images/image.png" alt="MarkTale" className="h-full w-auto object-contain" />
+                    <Image
+                        src="/images/image.png"
+                        alt="MarkTale"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 160px, 160px"
+                    />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -67,7 +72,7 @@ export default function Navbar() {
                         href="#contact"
                         className="inline-block px-6 py-2 bg-white text-black font-heading font-bold text-sm rounded-full hover:bg-gray-200 transition-colors"
                     >
-                        Let's Talk
+                        Let&apos;s Talk
                     </Link>
                 </div>
 
@@ -104,7 +109,7 @@ export default function Navbar() {
                             className="inline-block px-6 py-2 bg-white text-black font-heading font-bold text-sm rounded-full hover:bg-gray-200 transition-colors text-center"
                             onClick={() => setMobileMenuOpen(false)}
                         >
-                            Let's Talk
+                            Let&apos;s Talk
                         </Link>
                     </div>
                 </motion.div>

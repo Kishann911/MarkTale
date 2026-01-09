@@ -31,7 +31,7 @@ export default function Manifesto() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    Startups Don't Die of <span className="text-kestone-red">Starvation.</span>
+                    Startups Don&apos;t Die of <span className="text-kestone-red">Starvation.</span>
                 </motion.h1>
 
                 <motion.div

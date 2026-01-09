@@ -5,6 +5,7 @@ import PageHero from '@/app/components/ui/PageHero';
 import TeamCTA from '@/app/components/TeamCTA';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
@@ -41,10 +42,11 @@ export default async function ProjectPage({
 
                     {/* Image */}
                     <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden mb-16 shadow-2xl">
-                        <img
+                        <Image
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
                         />
                     </div>
 

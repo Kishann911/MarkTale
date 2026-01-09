@@ -35,9 +35,9 @@ export default function FounderQuote() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <div className="text-6xl text-kestone-red font-serif mb-6 opacity-30">"</div>
+                        <div className="text-6xl text-kestone-red font-serif mb-6 opacity-30">&quot;</div>
                         <blockquote className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight text-neutral-900 mb-8">
-                            The future of marketing isn't about shouting louder. It's about whispering the right message to the right person at the exact right time. <span className="text-kestone-red">AI makes that possible at scale.</span>
+                            The future of marketing isn&apos;t about shouting louder. It&apos;s about whispering the right message to the right person at the exact right time. <span className="text-kestone-red">AI makes that possible at scale.</span>
                         </blockquote>
                         <p className="text-lg text-neutral-500 font-body leading-relaxed">
                             With 13+ years transforming brands across real estate, SaaS, and automotive, I founded MarkTale to bridge the gap between creative ambition and data reality. We are the partners I always wished I had.

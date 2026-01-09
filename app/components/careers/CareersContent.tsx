@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
@@ -47,7 +48,7 @@ export default function CareersContent() {
                             Built for Those Who <br /> <span className="text-gray-400">Move Fast</span>
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-6 font-body">
-                            We are not a traditional agency. We are a growth engine powered by technology and creativity. We look for people who are obsessed with solving problems and aren't afraid to break things to make them better.
+                            We are not a traditional agency. We are a growth engine powered by technology and creativity. We look for people who are obsessed with solving problems and aren&apos;t afraid to break things to make them better.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {perks.map((perk, idx) => (
@@ -60,10 +61,11 @@ export default function CareersContent() {
                     </div>
                     <div className="relative h-96 bg-gray-100 rounded-2xl overflow-hidden">
                         {/* Placeholder for Culture Image - Using one of the generated assets */}
-                        <img
+                        <Image
                             src="/images/team-bw.png"
                             alt="MarkTale Culture"
-                            className="absolute inset-0 w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+                            fill
+                            className="object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
                         />
                     </div>
                 </div>

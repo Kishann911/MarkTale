@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Zap, Users, ShieldCheck } from 'lucide-react';
+import { Brain, Zap, Users } from 'lucide-react';
 
 const items = [
     {
