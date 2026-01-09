@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kestone-red: #FF214F;
+  --color-kestone-black: #000000;
+  --color-kestone-gray: #212529;
+  
+  --font-heading: var(--font-montserrat), sans-serif;
+  --font-body: var(--font-roboto), sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #212529;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+/* Custom Scrollbar for Kestone feel if needed, otherwise browser default */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
