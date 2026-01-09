@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 export default function StartupFeature() {
     return (
         <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
                     {/* Images Col */}
                     <motion.div
                         className="w-full lg:w-1/2 grid grid-cols-2 gap-4"

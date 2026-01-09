@@ -28,7 +28,7 @@ export default function Awards() {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 <motion.div
                     className="text-center mb-16 lg:mb-0 lg:absolute lg:top-24 lg:left-12 lg:text-left lg:w-1/4"
                     initial={{ opacity: 0, x: -30 }}
@@ -58,6 +58,6 @@ export default function Awards() {
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

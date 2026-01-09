@@ -9,7 +9,7 @@ export default function Testimonials() {
         <section className="flex flex-col lg:flex-row h-auto lg:h-[600px] w-full">
             {/* Left: Red Quote Box */}
             <motion.div
-                className="w-full lg:w-1/2 bg-kestone-red flex items-center justify-center p-12 lg:p-20 relative overflow-hidden"
+                className="w-full lg:w-1/2 bg-kestone-red flex items-center justify-center p-8 lg:p-20 relative overflow-hidden"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function Testimonials() {
 
             {/* Right: Dark Context Box */}
             <motion.div
-                className="w-full lg:w-1/2 bg-[#1a1a1a] flex items-center justify-center p-12 lg:p-20"
+                className="w-full lg:w-1/2 bg-[#1a1a1a] flex items-center justify-center p-8 lg:p-20"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

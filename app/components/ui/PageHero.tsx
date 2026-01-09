@@ -28,7 +28,7 @@ export default function PageHero({ title, subtitle, description, bgImage }: Page
                 </div>
             )}
 
-            <div className="container mx-auto relative z-10">
+            <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

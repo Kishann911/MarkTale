@@ -41,7 +41,7 @@ export default function Navbar() {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
+            <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="relative block w-40 h-12">
                     <Image

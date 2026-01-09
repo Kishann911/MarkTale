@@ -44,7 +44,7 @@ export default function HeroSection() {
             </div>
 
             {/* Content Carousel */}
-            <div className="relative z-10 container mx-auto px-6">
+            <div className="relative z-10 container mx-auto px-6 max-w-7xl">
                 <div className="max-w-4xl">
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -57,7 +57,7 @@ export default function HeroSection() {
                             <h2 className="text-xl md:text-2xl font-body font-bold text-kestone-red uppercase tracking-widest mb-4">
                                 {slides[currentSlide].subtitle}
                             </h2>
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-kestone-black leading-tight">
+                            <h1 className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold text-kestone-black leading-tight">
                                 {slides[currentSlide].title}
                             </h1>
                         </motion.div>
