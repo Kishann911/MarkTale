@@ -46,7 +46,7 @@ const items = [
 export default function PhilosophyGrid() {
     return (
         <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 max-w-7xl">
                 <div className="mb-16">
                     <span className="text-kestone-red font-bold tracking-widest uppercase text-sm mb-2 block">Our Methodology</span>
                     <h2 className="text-5xl font-heading font-black text-kestone-black uppercase">

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function FounderQuote() {
     return (
         <section className="py-24 bg-neutral-50 border-y border-neutral-200">
-            <div className="container mx-auto px-6 max-w-5xl">
+            <div className="container mx-auto px-6 max-w-7xl">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     {/* Visual - Minimalist Portrait placeholder */}
                     <motion.div
