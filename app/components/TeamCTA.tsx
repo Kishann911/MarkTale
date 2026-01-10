@@ -20,13 +20,13 @@ export default function TeamCTA() {
                     <p className="text-gray-500 max-w-3xl mx-auto font-body mb-8">
                         You may be an established enterprise with defined processes for almost everything or a self-funded start-up looking to create a niche for itself, we are here for you to make things work.
                     </p>
-                    <button className="bg-kestone-black text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-gray-900 transition-all hover:shadow-lg">
+                    <button className="bg-kestone-black text-white px-6 py-3 md:px-10 md:py-4 font-bold uppercase tracking-wider hover:bg-gray-900 transition-all hover:shadow-lg">
                         Get In Touch
                     </button>
                 </motion.div>
             </div>
 
-            <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] grayscale">
+            <div className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] grayscale">
                 <Image
                     src="/images/team-bw.png"
                     alt="Marktale Team"

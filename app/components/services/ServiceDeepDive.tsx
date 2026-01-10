@@ -2,26 +2,26 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, Video, Search, FileText, Target, ShieldCheck, Palette, TrendingUp, BarChart } from 'lucide-react'; // Imports for icons used in ServicesGrid to ensure consistency if needed, though this file uses Check.
 
 const deepDives = [
     {
-        title: "MaaS: Your Outsourced Growth Engine",
-        subtitle: "Marketing as a Service",
-        content: "For startups and lean enterprises, hiring a full-stack marketing team is cost-prohibitive. A CMO, Performance Marketer, Content Lead, and Designer can easily cost $300k+ annually. \n\nMaaS (Marketing as a Service) is our answer. We plug into your organization as a fully functional marketing department. We don't just execute tasks; we own the OKRs. From setting up your CRM to running daily ad optimizations and managing your social narrative, we handle it all with the agility of a startup and the discipline of an enterprise.",
-        benefits: ["Zero hiring/training overhead", "Access to a multi-disciplinary team", "Scalable based on growth phase", "Strategy meets execution"]
+        title: "Captivating Visuals",
+        subtitle: "Video Content Creation",
+        content: "Crafting captivating video content is crucial for brands to engage their audience and showcase their products or services in a compelling manner. Our team of creative professionals specializes in producing high-quality, attention-grabbing videos that tell your brand’s story and drive meaningful connections with your target market.",
+        benefits: ["High-quality Production", "Attention-Grabbing", "Brand Storytelling", "Meaningful Connections"]
     },
     {
-        title: "Tech That Scales With You",
-        subtitle: "Web & App Development",
-        content: "In 2024, your digital product is your brand. A slow website or a buggy app is a conversion killer. Our development philosophy is simple: 'Performance First.'\n\nWe build on modern stacks like Next.js for web and Flutter for mobile to ensure speed, SEO dominance, and cross-platform consistency. Whether you need a complex e-commerce headless architecture or a high-converting landing page, our code is clean, documented, and built to scale.",
-        benefits: ["Headless CMS architectures", "Pixel-perfect implementations", "SEO-native code structure", "High-performance compute"]
+        title: "Deep Understanding",
+        subtitle: "Market Research",
+        content: "We employ a multi-faceted approach to understand your audience:\n\n• Qualitative Research: In-depth interviews and focus groups to understand audience needs, pain points, and preferences.\n• Quantitative Analysis: Analysis of large-scale survey data to identify statistically significant trends.\n• Observational Studies: Ethnographic research observing customers in natural environments.",
+        benefits: ["Audience Needs", "Pain Points", "Significant Trends", "Natural Behaviors"]
     },
     {
-        title: "ROI-Obsessed Performance Marketing",
-        subtitle: "Digital Advertising",
-        content: "Clicks are vanity; revenue is sanity. We stop the budget bleed by focusing on high-intent channels. We don't just run ads; we build funnels.\n\nOur approach involves deep data analytics to understand your customer's journey. We test creatives relentlessly, optimize landing pages for conversion, and use automated email loops to increase LTV. We treat your ad budget like our own money—every dollar must show a return.",
-        benefits: ["Full-funnel attribution", "Creative A/B testing", "Conversion Rate Optimization (CRO)", "Real-time dashboards"]
+        title: "Strategy First",
+        subtitle: "Marketing Plan Development",
+        content: "We take a strategic, data-driven approach to marketing, blending traditional and digital techniques to create customized solutions for your brand. Our comprehensive planning includes data-driven insights and creative ideation to ensure your marketing efforts yield maximum impact.",
+        benefits: ["Comprehensive Planning", "Data-Driven Insights", "Creative Ideation", "Customized Solutions"]
     }
 ];
 
@@ -44,7 +44,7 @@ export default function ServiceDeepDive() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16`}
+                            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 lg:gap-16`}
                         >
                             <div className="flex-1">
                                 <span className="text-kestone-red font-bold tracking-widest uppercase text-sm mb-4 block">

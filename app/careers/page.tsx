@@ -4,6 +4,7 @@ import React from 'react';
 import PageHero from '@/app/components/ui/PageHero';
 import CareersContent from '@/app/components/careers/CareersContent';
 import TeamCTA from '@/app/components/TeamCTA';
+import TeamCulture from '@/app/components/about/TeamCulture';
 
 export default function CareersPage() {
     return (
@@ -13,6 +14,7 @@ export default function CareersPage() {
                 subtitle="Join Us"
                 description="We are building the future of marketing. If you want to move fast and break things, you belong here."
             />
+            <TeamCulture />
             <CareersContent />
             <TeamCTA />
         </div>

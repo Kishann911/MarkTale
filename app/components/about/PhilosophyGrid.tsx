@@ -6,39 +6,30 @@ import { Brain, Zap, Users } from 'lucide-react';
 
 const items = [
     {
-        title: "The Old Way",
-        subtitle: "Guesswork & Gut Feelings",
-        desc: "Traditional agencies rely on subjective creativity and manual processes that scale linearly.",
-        bg: "bg-neutral-100",
-        text: "text-neutral-500",
-        colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
-        icon: null
-    },
-    {
-        title: "The MarkTale Engine",
-        subtitle: "MaaS (Marketing as a Service)",
-        desc: "We deployed an AI-driven infrastructure that learns from every campaign, optimizing 24/7.",
+        title: "Core Philosophy",
+        subtitle: "Strategic Approach",
+        desc: "We take a strategic, data-driven approach to marketing, blending traditional and digital techniques to create customized solutions for your brand.",
         bg: "bg-kestone-red text-white",
         text: "text-white/80",
         colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
         icon: Zap
     },
     {
-        title: "Data Decoded",
-        subtitle: "Precision > Volume",
-        desc: "It's not about more leads. It's about the RIGHT leads.",
+        title: "Performance",
+        subtitle: "Measurable Impact",
+        desc: "Our services are designed to deliver measurable results, helping you track and optimize your marketing efforts for maximum impact.",
         bg: "bg-neutral-900 text-white",
         text: "text-gray-400",
         colSpan: "col-span-1 md:col-span-1 lg:col-span-1",
         icon: Brain
     },
     {
-        title: "Human Led",
-        subtitle: "Soul in the Machine",
-        desc: "AI builds the road. Humans drive the car. We bring the storytelling that algorithms can't replicate.",
+        title: "Holistic",
+        subtitle: "Seamless Integration",
+        desc: "We seamlessly integrate traditional and digital marketing channels, ensuring a cohesive brand experience across all touchpoints.",
         bg: "bg-white border border-neutral-200",
         text: "text-neutral-600",
-        colSpan: "col-span-1 md:col-span-1 lg:col-span-2",
+        colSpan: "col-span-1 md:col-span-2 lg:col-span-3", // Full width for the last one
         icon: Users
     }
 ];
@@ -59,7 +50,7 @@ export default function PhilosophyGrid() {
                     {items.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            className={`${item.colSpan} ${item.bg} p-10 flex flex-col justify-between rounded-3xl relative overflow-hidden group`}
+                            className={`${item.colSpan} ${item.bg} p-6 md:p-10 flex flex-col justify-between rounded-3xl relative overflow-hidden group`}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}

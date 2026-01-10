@@ -17,8 +17,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "MarkTale | Integrated B2B Marketing Agency",
-  description: "Growth Partners in the Age of AI.",
+  title: "MarkTale | AI Powered Marketing Agency",
+  description: "An advertising company helping brands succeed in both traditional and digital marketing.",
 };
 
 export default function RootLayout({

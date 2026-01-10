@@ -8,14 +8,16 @@ export default function Footer() {
     return (
         <footer className="bg-kestone-black text-white pt-20 pb-10" id="contact">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
                     {/* Brand Column */}
                     <div>
                         <Link href="/" className="text-3xl font-heading font-bold tracking-widest uppercase mb-6 block">
                             Mark<span className="text-kestone-red">Tale</span>
                         </Link>
                         <p className="text-gray-400 mb-6 font-body leading-relaxed">
-                            Transforming businesses through AI-driven marketing and technology solutions. Your partner in scalable growth.
+                            MarkTale is an AI powered pioneering advertising and marketing company dedicated
+                            to helping businesses of all sizes achieve their maximum potential through innovative
+                            and effective marketing strategies.
                         </p>
                         <div className="flex space-x-4">
                             {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
@@ -33,9 +35,9 @@ export default function Footer() {
                             {[
                                 { name: 'Home', href: '/' },
                                 { name: 'About Us', href: '/about' },
-                                { name: 'Services', href: '#services' },
-                                { name: 'Case Studies', href: '#marktale' },
-                                { name: 'Contact', href: '#contact' }
+                                { name: 'Services', href: '/services' },
+                                { name: 'Projects', href: '/projects' },
+                                { name: 'Contact Us', href: '/contact' }
                             ].map((item) => (
                                 <li key={item.name}>
                                     <Link href={item.href} className="text-gray-400 hover:text-kestone-red transition-colors text-sm uppercase tracking-wide">
@@ -50,9 +52,19 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xl font-heading font-bold mb-8 uppercase tracking-wider">Services</h4>
                         <ul className="space-y-4">
-                            {['Startup Building', 'Web Development', 'Digital Marketing', 'Brand Identity', 'SEO Optimization'].map((item) => (
+                            {[
+                                'Video Content Creation',
+                                'Market Research',
+                                'Marketing Plan Development',
+                                'Lead Generation',
+                                'Online Reputation Management',
+                                'UI / UX Design',
+                                'Performance Marketing',
+                                'SEO & Analytics',
+                                'Web Development'
+                            ].map((item) => (
                                 <li key={item}>
-                                    <Link href="#" className="text-gray-400 hover:text-kestone-red transition-colors text-sm uppercase tracking-wide">
+                                    <Link href="/services" className="text-gray-400 hover:text-kestone-red transition-colors text-sm uppercase tracking-wide">
                                         {item}
                                     </Link>
                                 </li>
@@ -66,15 +78,15 @@ export default function Footer() {
                         <ul className="space-y-6">
                             <li className="flex items-start">
                                 <MapPin className="text-kestone-red mr-4 mt-1 flex-shrink-0" size={20} />
-                                <span className="text-gray-400">123 Business Park, Tech Hub District, Innovation City, India</span>
+                                <span className="text-gray-400">Plot no. 141, Sec. 14, Dwarka, New Delhi – 110078</span>
                             </li>
                             <li className="flex items-center">
                                 <Phone className="text-kestone-red mr-4 flex-shrink-0" size={20} />
-                                <span className="text-gray-400">+91 98765 43210</span>
+                                <span className="text-gray-400">+91-8587870707</span>
                             </li>
                             <li className="flex items-center">
                                 <Mail className="text-kestone-red mr-4 flex-shrink-0" size={20} />
-                                <span className="text-gray-400">hello@marktaleworld.com</span>
+                                <span className="text-gray-400">sales@marktaleworld.com</span>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +94,7 @@ export default function Footer() {
 
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} MarkTale World. All rights reserved.
+                        © {new Date().getFullYear()} MarkTale World. All rights reserved. | www.marktaleworld.com
                     </p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
                         <Link href="#" className="text-gray-500 hover:text-white text-sm">Privacy Policy</Link>

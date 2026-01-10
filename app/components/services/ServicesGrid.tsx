@@ -2,56 +2,62 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Megaphone, PenTool, Database, Search, Smartphone, Globe, BarChart } from 'lucide-react';
+import { Code, Megaphone, PenTool, Database, Search, Smartphone, Globe, BarChart, Video, FileText, Target, ShieldCheck, Palette, TrendingUp } from 'lucide-react';
 
 const services = [
     {
-        icon: Database,
-        title: "MaaS (Marketing as a Service)",
-        desc: "A fully managed marketing engine for startups. We handle everything from strategy to execution, acting as your extended growth team.",
-        features: ["Go-to-Market Strategy", "Full-Stack Execution", "AI-Driven Optimization"]
+        icon: Video,
+        title: "Video Content Creation",
+        desc: "Crafting captivating video content is crucial for brands to engage their audience and showcase their products or services in a compelling manner.",
+        features: ["High-quality production", "Storytelling", "Meaningful connections"]
+    },
+    {
+        icon: Search,
+        title: "Market Research",
+        desc: "In-depth understanding of audience needs, pain points, and preferences through qualitative and quantitative analysis.",
+        features: ["Qualitative Research", "Quantitative Analysis", "Observational Studies"]
+    },
+    {
+        icon: FileText,
+        title: "Marketing Plan Development",
+        desc: "Strategic, data-driven approach to marketing, blending traditional and digital techniques to create customized solutions.",
+        features: ["Comprehensive Planning", "Data-Driven Insights", "Creative Ideation"]
+    },
+    {
+        icon: Target,
+        title: "Lead Generation",
+        desc: "Driving brand visibility and customer engagement to generate high-quality leads for your business.",
+        features: ["Targeted Campaigns", "Conversion Optimization", "Pipeline Growth"]
+    },
+    {
+        icon: ShieldCheck,
+        title: "Online Reputation Management",
+        desc: "Protecting and enhancing your brand's image across digital channels to build trust and credibility.",
+        features: ["Brand Monitoring", "Review Management", "Crisis Response"]
+    },
+    {
+        icon: Palette,
+        title: "UI / UX Design",
+        desc: "Designing intuitive and visually stunning user interfaces that provide exceptional user experiences.",
+        features: ["User Research", "Prototyping", "Visual Design"]
+    },
+    {
+        icon: TrendingUp,
+        title: "Performance Marketing",
+        desc: "Data-focused advertising campaigns optimized for maximum ROI and measurable impact.",
+        features: ["Paid Search", "Social Ads", "Retargeting"]
+    },
+    {
+        icon: BarChart,
+        title: "SEO & Analytics",
+        desc: "Improving search engine visibility and deriving actionable insights from data to optimize performance.",
+        features: ["Keyword Strategy", "Technical SEO", "Performance Tracking"]
     },
     {
         icon: Globe,
         title: "Web Development",
-        desc: "Building blazing fast, SEO-optimized, and visually stunning websites that convert visitors into customers.",
-        features: ["Next.js & React", "eCommerce Platforms", "Custom CMS Solutions"]
-    },
-    {
-        icon: Smartphone,
-        title: "App Development",
-        desc: "Native and cross-platform mobile applications designed for seamless user experiences and high scalability.",
-        features: ["iOS & Android", "Flutter / React Native", "UI/UX Design"]
-    },
-    {
-        icon: Search,
-        title: "SEO Optimization",
-        desc: "Dominate search rankings with our data-first SEO strategies. We don't just target keywords; we target intent.",
-        features: ["Technical SEO", "On-Page Optimization", "Backlink Strategy"]
-    },
-    {
-        icon: Megaphone,
-        title: "Performance Marketing",
-        desc: "High-ROI paid campaigns across Google, Meta, and LinkedIn to drive qualified leads and sales.",
-        features: ["PPC Campaigns", "Social Media Ads", "Retargeting Pipelines"]
-    },
-    {
-        icon: PenTool,
-        title: "Brand Identity",
-        desc: "Crafting memorable brands with distinct visual languages and compelling narratives that resonate.",
-        features: ["Logo Design", "Brand Guidelines", "Visual Storytelling"]
-    },
-    {
-        icon: Code,
-        title: "Custom AI Solutions",
-        desc: "Leveraging Large Language Models and automation to build custom tools that streamline your business ops.",
-        features: ["Chatbots", "Process Automation", "Data Analysis Tools"]
-    },
-    {
-        icon: BarChart,
-        title: "Analytics & Insights",
-        desc: "Turning data into actionable growth strategies. We set up comprehensive tracking to measure every click.",
-        features: ["Google Analytics 4", "Conversion Tracking", "User Behavior Analysis"]
+        desc: "Building robust, scalable, and high-performance websites that serve as the foundation of your digital presence.",
+        features: ["Responsive Design", "Custom Solutions", "Seamless Integration"]
     }
 ];
 
@@ -67,7 +73,7 @@ export default function ServicesGrid() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-neutral-50 p-8 rounded-2xl hover:bg-black hover:text-white transition-all duration-300 group border border-transparent hover:border-black/10 group cursor-default"
+                            className="bg-neutral-50 p-6 md:p-8 rounded-2xl hover:bg-black hover:text-white transition-all duration-300 group border border-transparent hover:border-black/10 group cursor-default"
                         >
                             <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-kestone-black group-hover:bg-kestone-red group-hover:text-white transition-colors duration-300">
                                 <service.icon size={28} />

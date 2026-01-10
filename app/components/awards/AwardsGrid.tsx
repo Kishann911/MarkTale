@@ -55,7 +55,7 @@ export default function AwardsGrid() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group"
+                            className="bg-white p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group"
                         >
                             <div className="flex justify-between items-start mb-6">
                                 <div className="p-3 bg-red-50 text-kestone-red rounded-lg group-hover:bg-kestone-red group-hover:text-white transition-colors duration-300">

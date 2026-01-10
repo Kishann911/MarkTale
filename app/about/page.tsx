@@ -2,6 +2,7 @@ import Manifesto from "../components/about/Manifesto";
 import PhilosophyGrid from "../components/about/PhilosophyGrid";
 import FounderQuote from "../components/about/FounderQuote";
 import TeamCTA from "../components/TeamCTA";
+import TeamCulture from "../components/about/TeamCulture";
 
 export default function AboutPage() {
     return (
@@ -11,6 +12,9 @@ export default function AboutPage() {
 
             {/* The Methodology - Grid */}
             <PhilosophyGrid />
+
+            {/* Team Culture */}
+            <TeamCulture />
 
             {/* The Visionary - Editorial Quote */}
             <FounderQuote />

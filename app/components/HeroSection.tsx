@@ -6,16 +6,16 @@ import Image from 'next/image';
 
 const slides = [
     {
-        title: "Startups & Brand Building",
-        subtitle: "We Build & Scale Brands"
+        title: "MarkTale",
+        subtitle: "AI Powered Marketing Agency"
     },
     {
-        title: "Growth Partners",
-        subtitle: "In the Age of AI"
+        title: "Digital Media Maestro",
+        subtitle: "Crafting your Symphony of Digital Impact"
     },
     {
-        title: "Full-Service Agency",
-        subtitle: "Marketing & Technology"
+        title: "Helping Brands Grow",
+        subtitle: "Strategic. Measurable. Seamless."
     }
 ];
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
                             <h2 className="text-xl md:text-2xl font-body font-bold text-kestone-red uppercase tracking-widest mb-4">
                                 {slides[currentSlide].subtitle}
                             </h2>
-                            <h1 className="text-4xl md:text-7xl lg:text-8xl font-heading font-bold text-kestone-black leading-tight">
+                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-kestone-black leading-tight">
                                 {slides[currentSlide].title}
                             </h1>
                         </motion.div>
@@ -71,7 +71,7 @@ export default function HeroSection() {
                         className="mt-8"
                     >
                         <p className="text-lg text-gray-600 max-w-lg mb-8">
-                            We combine AI tools, human creativity, and execution clarity to deliver real business outcomes.
+                            MarkTale is an AI powered pioneering advertising and marketing company dedicated to helping businesses of all sizes achieve their maximum potential through innovative and effective marketing strategies.
                         </p>
                         <button className="px-8 py-4 bg-kestone-red text-white font-heading font-bold text-lg uppercase tracking-wider hover:bg-red-700 transition-all hover:shadow-xl transform hover:-translate-y-1">
                             Explore Services

@@ -1,106 +1,117 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Video, Search, FileText, Target, ShieldCheck, Palette, TrendingUp, BarChart, Globe } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
     {
-        id: 'startup',
-        title: 'Startup & Brand Building',
-        description: 'We help early-stage companies build a strong foundation. From market research and brand identity to go-to-market strategy, we are your partners in scaling from zero to one.',
-        image: '/images/service-startup.png',
-        features: ['Brand Identity Design', 'Go-to-Market Strategy', 'Pitch Deck Creation', 'Market Analysis']
+        title: 'Video Content Creation',
+        icon: Video,
+        description: 'Crafting captivating video content to engage audiences and tell your brand story.'
     },
     {
-        id: 'development',
-        title: 'Website & App Development',
-        description: 'Our engineering team builds robust, scalable, and high-performance digital products. Whether it\'s a responsive website, a complex web app, or a mobile application, we deliver excellence.',
-        image: '/images/service-dev.png',
-        features: ['Custom Web Development', 'Mobile App Development', 'E-commerce Solutions', 'UI/UX Design']
+        title: 'Market Research',
+        icon: Search,
+        description: 'Qualitative research, quantitative analysis, and observational studies to understand your market.'
     },
     {
-        id: 'marketing',
-        title: 'Digital Marketing & Growth',
-        description: 'Data-driven marketing strategies that deliver ROI. We leverage SEO, content marketing, and paid acquisition to drive traffic and convert leads into loyal customers.',
-        image: '/images/service-marketing.png',
-        features: ['SEO & SEM', 'Social Media Marketing', 'Content Strategy', 'Lead Generation']
+        title: 'Marketing Plan Development',
+        icon: FileText,
+        description: 'Comprehensive planning, data-driven insights, and creative ideation for growth.'
+    },
+    {
+        title: 'Lead Generation',
+        icon: Target,
+        description: 'Strategies to attract and convert high-quality leads for your business.'
+    },
+    {
+        title: 'Online Reputation Management',
+        icon: ShieldCheck,
+        description: 'Monitoring and improving your brand perception across digital channels.'
+    },
+    {
+        title: 'UI / UX Design',
+        icon: Palette,
+        description: 'Designing intuitive and aesthetically pleasing digital experiences.'
+    },
+    {
+        title: 'Performance Marketing',
+        icon: TrendingUp,
+        description: 'Data-focused advertising campaigns optimized for maximum ROI.'
+    },
+    {
+        title: 'SEO & Analytics',
+        icon: BarChart,
+        description: 'Improving visibility and deriving actionable insights from data.'
+    },
+    {
+        title: 'Web Development',
+        icon: Globe,
+        description: 'Building robust, scalable, and high-performance websites and applications.'
     }
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+};
+
 export default function ServicesSection() {
     return (
-        <section className="py-24 bg-white overflow-hidden" id="services">
-            <div className="container mx-auto px-6">
+        <section className="py-24 bg-gray-50 overflow-hidden" id="services">
+            <div className="container mx-auto px-6 max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <span className="text-kestone-red font-body font-bold uppercase tracking-widest text-sm block mb-3">Our Expertise</span>
+                    <span className="text-kestone-red font-body font-bold uppercase tracking-widest text-sm block mb-3">What We Do</span>
                     <h2 className="text-4xl md:text-5xl font-heading font-bold text-kestone-black">
-                        Comprehensive <br /> <span className="text-gray-400">Growth Solutions</span>
+                        Our Services
                     </h2>
                 </motion.div>
 
-                <div className="space-y-32">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {services.map((service, index) => (
-                        <div
-                            key={service.id}
-                            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            className="bg-white p-8 rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 group border-b-4 border-transparent hover:border-kestone-red"
                         >
-                            {/* Image Side */}
-                            <motion.div
-                                className="w-full lg:w-1/2 relative group"
-                                initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                            >
-                                <div className="relative h-[400px] lg:h-[500px] w-full overflow-hidden rounded-sm shadow-2xl">
-                                    <Image
-                                        src={service.image}
-                                        alt={service.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-kestone-black/10 group-hover:bg-transparent transition-colors duration-500" />
-                                </div>
-                                {/* Decorative Element */}
-                                <div className={`absolute -bottom-6 ${index % 2 === 1 ? '-left-6' : '-right-6'} w-24 h-24 bg-kestone-red/10 z-[-1]`} />
-                            </motion.div>
-
-                            {/* Text Side */}
-                            <motion.div
-                                className="w-full lg:w-1/2"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                            >
-                                <h3 className="text-3xl md:text-4xl font-heading font-bold text-kestone-black mb-6">
-                                    {service.title}
-                                </h3>
-                                <p className="text-lg text-gray-600 font-body mb-8 leading-relaxed">
-                                    {service.description}
-                                </p>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                                    {service.features.map((feature, i) => (
-                                        <li key={i} className="flex items-center text-gray-700 font-medium">
-                                            <span className="w-2 h-2 bg-kestone-red rounded-full mr-3" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <button className="group flex items-center text-kestone-red font-bold uppercase tracking-wider hover:text-red-700 transition-colors">
-                                    Learn More <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                                </button>
-                            </motion.div>
-                        </div>
+                            <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-kestone-red transition-colors duration-300">
+                                <service.icon className="text-kestone-black group-hover:text-white transition-colors duration-300" size={28} />
+                            </div>
+                            <h3 className="text-xl font-heading font-bold text-kestone-black mb-4 group-hover:text-kestone-red transition-colors">
+                                {service.title}
+                            </h3>
+                            <p className="text-gray-600 font-body mb-6 leading-relaxed">
+                                {service.description}
+                            </p>
+                            <Link href="/services" className="inline-flex items-center text-kestone-red font-bold uppercase text-sm tracking-wider hover:underline">
+                                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                            </Link>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

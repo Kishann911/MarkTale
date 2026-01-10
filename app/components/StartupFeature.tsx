@@ -16,7 +16,7 @@ export default function StartupFeature() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <div className="relative h-80 w-full mt-12 rounded-lg overflow-hidden shadow-xl">
+                        <div className="relative h-64 md:h-80 w-full mt-12 rounded-lg overflow-hidden shadow-xl">
                             <Image
                                 src="/images/startup-cafe.png"
                                 alt="Startup Founder"
@@ -24,7 +24,7 @@ export default function StartupFeature() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
+                        <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden shadow-xl">
                             <Image
                                 src="/images/service-dev.png" // Reusing dev image for context
                                 alt="Coding"
@@ -41,8 +41,8 @@ export default function StartupFeature() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-heading font-bold text-kestone-black mb-6">
-                            Empower B2B Startups to <br /> Scale Globally
+                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-kestone-black mb-6">
+                            Empower B2B Startups to <br className="hidden md:block" /> Scale Globally
                         </h2>
                         <h4 className="text-xl text-gray-500 font-medium mb-8">
                             Ready to take your startup to the next level with a wide range of growth recipes?

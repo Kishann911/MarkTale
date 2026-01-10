@@ -16,7 +16,7 @@ export default function Manifesto() {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-[90vh] flex items-center justify-center bg-kestone-black text-white overflow-hidden px-6"
+            className="relative h-screen w-full flex items-center justify-center bg-kestone-black text-white overflow-hidden px-6"
         >
             {/* Background Grid - faint */}
             <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#333 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -26,12 +26,12 @@ export default function Manifesto() {
                 style={{ y, opacity }}
             >
                 <motion.h1
-                    className="text-5xl md:text-7xl lg:text-9xl font-heading font-black leading-tight tracking-tighter mb-8"
+                    className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-heading font-black leading-tight tracking-tighter mb-8"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    Startups Don&apos;t Die of <span className="text-kestone-red">Starvation.</span>
+                    Mark<span className="text-kestone-red">Tale</span> – AI Powered Marketing Agency
                 </motion.h1>
 
                 <motion.div
@@ -40,19 +40,29 @@ export default function Manifesto() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-400">
-                        They Die of <span className="text-white">Indigestion.</span>
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-400">
+                        Helping Brands <span className="text-white">Grow</span>
                     </h2>
                 </motion.div>
 
-                <motion.p
-                    className="mt-12 text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto font-body leading-relaxed"
+                <motion.div
+                    className="mt-12 text-lg md:text-xl text-gray-500 max-w-4xl mx-auto font-body leading-relaxed space-y-6"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
                 >
-                    We don’t feed you empty metrics. We curate <span className="text-white font-bold">growth</span> using an AI-fueled engine that eliminates the noise.
-                </motion.p>
+                    <p>
+                        MarkTale is an AI powered pioneering advertising and marketing company dedicated
+                        to helping businesses of all sizes achieve their maximum potential through innovative
+                        and effective marketing strategies. We are committed to driving brand visibility,
+                        customer engagement, and lead generation for its clients.
+                    </p>
+                    <p className="text-white font-medium">
+                        What sets us apart is our unwavering dedication to our craft. With specialized
+                        departments focused on their respective areas of expertise, we delve deep into
+                        each project to ensure every detail is meticulously crafted.
+                    </p>
+                </motion.div>
 
                 <motion.div
                     className="mt-16"

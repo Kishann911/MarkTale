@@ -69,7 +69,7 @@ export default function Navbar() {
                         </div>
                     ))}
                     <Link
-                        href="#contact"
+                        href="/contact"
                         className="inline-block px-6 py-2 bg-white text-black font-heading font-bold text-sm rounded-full hover:bg-gray-200 transition-colors"
                     >
                         Let&apos;s Talk
@@ -89,9 +89,9 @@ export default function Navbar() {
             {mobileMenuOpen && (
                 <motion.div
                     initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
+                    animate={{ opacity: 1, height: '100vh' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="lg:hidden bg-kestone-black border-t border-gray-800"
+                    className="lg:hidden bg-kestone-black border-t border-gray-800 absolute inset-x-0 top-[100%] z-40 overflow-y-auto"
                 >
                     <div className="flex flex-col p-6 space-y-4">
                         {navLinks.map((link) => (
@@ -105,7 +105,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            href="#contact"
+                            href="/contact"
                             className="inline-block px-6 py-2 bg-white text-black font-heading font-bold text-sm rounded-full hover:bg-gray-200 transition-colors text-center"
                             onClick={() => setMobileMenuOpen(false)}
                         >

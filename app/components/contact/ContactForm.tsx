@@ -43,8 +43,8 @@ export default function ContactForm() {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-kestone-black mb-1">Email Us</h4>
-                                    <a href="mailto:info@marktaleworld.com" className="text-gray-600 hover:text-kestone-red transition-colors">
-                                        info@marktaleworld.com
+                                    <a href="mailto:sales@marktaleworld.com" className="text-gray-600 hover:text-kestone-red transition-colors">
+                                        sales@marktaleworld.com
                                     </a>
                                 </div>
                             </div>
@@ -56,8 +56,8 @@ export default function ContactForm() {
                                 <div>
                                     <h4 className="text-lg font-bold text-kestone-black mb-1">Visit Us</h4>
                                     <p className="text-gray-600">
-                                        MarkTale World Private Limited <br />
-                                        New Delhi, India
+                                        Plot no. 141, Sec. 14, Dwarka,<br />
+                                        New Delhi – 110078
                                     </p>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ export default function ContactForm() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         layoutId="contact-form"
-                        className="bg-neutral-50 p-8 md:p-12 rounded-3xl border border-gray-100"
+                        className="bg-neutral-50 p-6 md:p-12 rounded-3xl border border-gray-100"
                     >
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -90,7 +90,7 @@ export default function ContactForm() {
                                     <input
                                         type="text"
                                         id="name"
-                                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors"
+                                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors text-base"
                                         placeholder="John Doe"
                                     />
                                 </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
                                     <input
                                         type="tel"
                                         id="phone"
-                                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors"
+                                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors text-base"
                                         placeholder="+91..."
                                     />
                                 </div>
@@ -110,7 +110,7 @@ export default function ContactForm() {
                                 <input
                                     type="email"
                                     id="email"
-                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors"
+                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors text-base"
                                     placeholder="john@company.com"
                                 />
                             </div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
                                 <label htmlFor="service" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Service Interest</label>
                                 <select
                                     id="service"
-                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors text-gray-600"
+                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-kestone-black transition-colors text-gray-600 text-base"
                                 >
                                     <option>Marketing as a Service (MaaS)</option>
                                     <option>Web Development</option>

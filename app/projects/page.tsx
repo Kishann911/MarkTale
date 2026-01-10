@@ -4,6 +4,7 @@ import React from 'react';
 import PageHero from '@/app/components/ui/PageHero';
 import ProjectsGallery from '@/app/components/projects/ProjectsGallery';
 import TeamCTA from '@/app/components/TeamCTA';
+import GlobalIndustries from '@/app/components/GlobalIndustries';
 
 export default function ProjectsPage() {
     return (
@@ -13,6 +14,7 @@ export default function ProjectsPage() {
                 subtitle="Projects"
                 description="A visual showcase of how we help brands grow, scale, and dominate their industries."
             />
+            <GlobalIndustries />
             <ProjectsGallery />
             <TeamCTA />
         </div>
