@@ -2,32 +2,32 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 export default function ServiceCTA() {
     return (
-        <section className="py-24 bg-kestone-black text-white">
-            <div className="container mx-auto px-6 max-w-4xl text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
-                        Ready to Get Started?
-                    </h2>
-                    <p className="text-lg md:text-xl text-gray-300 font-body mb-10 max-w-2xl mx-auto">
-                        Let's discuss how we can help you achieve your goals. Our team is ready to transform your vision into reality.
-                    </p>
+        <section className="py-24 bg-kestone-black text-white px-6">
+            <div className="container mx-auto max-w-5xl text-center">
+                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8">
+                    Ready to Transform Your Business?
+                </h2>
+                <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Let&apos;s build something extraordinary together. Contact us today to discuss your project and discover how we can help you achieve your goals.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-3 bg-kestone-red text-white px-8 py-4 font-heading font-bold text-lg rounded-full hover:bg-red-600 transition-all hover:shadow-xl group"
+                        className="bg-kestone-red text-white px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider hover:bg-red-600 transition-colors flex items-center gap-2"
                     >
-                        Start Your Project Today
-                        <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                        Start Your Project <ArrowRight size={20} />
                     </Link>
-                </motion.div>
+                    <Link
+                        href="/projects"
+                        className="px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider border border-white hover:bg-white hover:text-black transition-all"
+                    >
+                        View Our Work
+                    </Link>
+                </div>
             </div>
         </section>
     );

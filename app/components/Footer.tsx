@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { services } from '@/app/lib/servicesData';
 
 export default function Footer() {
     return (
@@ -52,23 +53,18 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xl font-heading font-bold mb-8 uppercase tracking-wider">Services</h4>
                         <ul className="space-y-4">
-                            {[
-                                'Video Content Creation',
-                                'Market Research',
-                                'Marketing Plan Development',
-                                'Lead Generation',
-                                'Online Reputation Management',
-                                'UI / UX Design',
-                                'Performance Marketing',
-                                'SEO & Analytics',
-                                'Web Development'
-                            ].map((item) => (
-                                <li key={item}>
-                                    <Link href="/services" className="text-gray-400 hover:text-kestone-red transition-colors text-sm uppercase tracking-wide">
-                                        {item}
+                            {services.slice(0, 8).map((service) => (
+                                <li key={service.slug}>
+                                    <Link href={`/services/${service.slug}`} className="text-gray-400 hover:text-kestone-red transition-colors text-sm uppercase tracking-wide">
+                                        {service.title}
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <Link href="/services" className="text-kestone-red hover:text-white transition-colors text-sm uppercase tracking-wide font-bold">
+                                    View All Services
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

@@ -1,15 +1,15 @@
 import { notFound } from 'next/navigation';
-import { getServiceBySlug, getAllServiceSlugs } from '@/app/lib/services';
+import type { Metadata } from 'next';
+import { getAllServiceSlugs, getServiceBySlug } from '@/app/lib/servicesData';
 import ServiceHero from '@/app/components/services/detail/ServiceHero';
 import ServiceContent from '@/app/components/services/detail/ServiceContent';
-import ServiceFAQ from '@/app/components/services/detail/ServiceFAQ';
 import ServiceCTA from '@/app/components/services/detail/ServiceCTA';
-import type { Metadata } from 'next';
+import ServiceFAQ from '@/app/components/services/detail/ServiceFAQ';
 
 interface ServicePageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateStaticParams() {
@@ -20,7 +20,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-    const service = getServiceBySlug(params.slug);
+    const { slug } = await params;
+    const service = getServiceBySlug(slug);
 
     if (!service) {
         return {
@@ -34,12 +35,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     };
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-    const service = getServiceBySlug(params.slug);
+export default async function ServicePage({ params }: ServicePageProps) {
+    const { slug } = await params;
+    const service = getServiceBySlug(slug);
 
     if (!service) {
         notFound();
     }
+
+    const Icon = service.icon;
 
     return (
         <main className="min-h-screen bg-white">
@@ -47,7 +51,8 @@ export default function ServicePage({ params }: ServicePageProps) {
                 title={service.title}
                 tagline={service.tagline}
                 description={service.heroDescription}
-                icon={service.icon}
+                iconSmall={<Icon size={18} className="text-kestone-red" />}
+                iconLarge={<Icon size={120} className="absolute text-white/10" />}
             />
 
             <ServiceContent sections={service.sections} />

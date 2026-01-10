@@ -2,232 +2,67 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
-
-interface ContentSection {
-    whyChoose?: {
-        title: string;
-        content: string;
-        points: string[];
-    };
-    problem?: {
-        title: string;
-        content: string;
-    };
-    differentiators?: {
-        title: string;
-        points: { title: string; description: string }[];
-    };
-    framework?: {
-        title: string;
-        steps: { title: string; description: string }[];
-    };
-    platforms?: {
-        title: string;
-        items: { name: string; description: string }[];
-    };
-    results?: {
-        title: string;
-        outcomes: string[];
-    };
-}
+import { Check, ArrowRight } from 'lucide-react';
+import { ServiceSection } from '@/app/lib/servicesData';
 
 interface ServiceContentProps {
-    sections: ContentSection;
+    sections: ServiceSection[];
 }
 
 export default function ServiceContent({ sections }: ServiceContentProps) {
     return (
-        <>
-            {/* Why Choose Section */}
-            {sections.whyChoose && (
-                <section className="py-24 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-kestone-black mb-8">
-                                {sections.whyChoose.title}
-                            </h2>
-                            <p className="text-lg text-gray-600 font-body leading-relaxed mb-8">
-                                {sections.whyChoose.content}
-                            </p>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {sections.whyChoose.points.map((point, idx) => (
-                                    <li key={idx} className="flex items-start">
-                                        <Check className="text-kestone-red mr-3 mt-1 flex-shrink-0" size={20} />
-                                        <span className="text-gray-700 font-body">{point}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    </div>
-                </section>
-            )}
+        <div className="bg-white">
+            {sections.map((section, idx) => {
+                // Alternating Layouts or Specific Styles based on 'type'
+                const isHighlight = section.type === 'highlight';
+                const isDark = isHighlight; // Highlight sections get dark bg
 
-            {/* Problem Section */}
-            {sections.problem && (
-                <section className="py-24 bg-gray-50">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-kestone-black mb-8">
-                                {sections.problem.title}
-                            </h2>
-                            <p className="text-lg text-gray-600 font-body leading-relaxed">
-                                {sections.problem.content}
-                            </p>
-                        </motion.div>
-                    </div>
-                </section>
-            )}
+                return (
+                    <section
+                        key={idx}
+                        className={`py-20 px-6 ${isDark ? 'bg-neutral-900 text-white' : 'bg-white text-kestone-black'} ${section.type === 'process' ? 'bg-neutral-50' : ''}`}
+                    >
+                        <div className="container mx-auto max-w-7xl">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="max-w-4xl mx-auto"
+                            >
+                                {section.subtitle && (
+                                    <span className={`block mb-4 text-sm font-bold uppercase tracking-widest ${isDark ? 'text-kestone-red' : 'text-kestone-red'}`}>
+                                        {section.subtitle}
+                                    </span>
+                                )}
 
-            {/* Differentiators Section */}
-            {sections.differentiators && (
-                <section className="py-24 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-heading font-bold text-kestone-black mb-12"
-                        >
-                            {sections.differentiators.title}
-                        </motion.h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {sections.differentiators.points.map((point, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    className="bg-gray-50 p-6 rounded-xl"
-                                >
-                                    <h3 className="text-xl font-heading font-bold text-kestone-black mb-3">
-                                        {point.title}
-                                    </h3>
-                                    <p className="text-gray-600 font-body">
-                                        {point.description}
-                                    </p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
+                                {section.title && (
+                                    <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-8 ${isDark ? 'text-white' : 'text-kestone-black'}`}>
+                                        {section.title}
+                                    </h2>
+                                )}
 
-            {/* Framework Section */}
-            {sections.framework && (
-                <section className="py-24 bg-kestone-black text-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-heading font-bold mb-12"
-                        >
-                            {sections.framework.title}
-                        </motion.h2>
-                        <div className="space-y-8">
-                            {sections.framework.steps.map((step, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    className="flex gap-6"
-                                >
-                                    <div className="flex-shrink-0 w-12 h-12 bg-kestone-red rounded-full flex items-center justify-center font-heading font-bold text-xl">
-                                        {idx + 1}
+                                <div className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'} font-body space-y-6`}>
+                                    <p>{section.content}</p>
+                                </div>
+
+                                {section.list && section.list.length > 0 && (
+                                    <div className={`mt-10 ${section.type === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : 'space-y-4'}`}>
+                                        {section.list.map((item, listIdx) => (
+                                            <div key={listIdx} className="flex items-start">
+                                                <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-1 mr-4 ${isDark ? 'bg-kestone-red text-white' : 'bg-kestone-red/10 text-kestone-red'}`}>
+                                                    <Check size={14} strokeWidth={3} />
+                                                </div>
+                                                <p className={`${isDark ? 'text-gray-200' : 'text-gray-700'} font-medium`}>{item}</p>
+                                            </div>
+                                        ))}
                                     </div>
-                                    <div>
-                                        <h3 className="text-2xl font-heading font-bold mb-3">
-                                            {step.title}
-                                        </h3>
-                                        <p className="text-gray-300 font-body leading-relaxed">
-                                            {step.description}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                )}
+                            </motion.div>
                         </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Platforms Section */}
-            {sections.platforms && (
-                <section className="py-24 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-heading font-bold text-kestone-black mb-12"
-                        >
-                            {sections.platforms.title}
-                        </motion.h2>
-                        <div className="space-y-6">
-                            {sections.platforms.items.map((item, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    className="bg-gray-50 p-6 rounded-xl"
-                                >
-                                    <h3 className="text-xl font-heading font-bold text-kestone-black mb-2">
-                                        {item.name}
-                                    </h3>
-                                    <p className="text-gray-600 font-body">
-                                        {item.description}
-                                    </p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Results Section */}
-            {sections.results && (
-                <section className="py-24 bg-gray-50">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-kestone-black mb-12">
-                                {sections.results.title}
-                            </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {sections.results.outcomes.map((outcome, idx) => (
-                                    <motion.div
-                                        key={idx}
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: idx * 0.1 }}
-                                        className="flex items-start bg-white p-6 rounded-xl"
-                                    >
-                                        <Check className="text-kestone-red mr-4 mt-1 flex-shrink-0" size={24} />
-                                        <span className="text-lg text-gray-700 font-body">{outcome}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
-            )}
-        </>
+                    </section>
+                );
+            })}
+        </div>
     );
 }
